@@ -1,0 +1,9 @@
+owner = DEN
+controller = DEN
+add_core = HND
+add_core = BNG
+trade_goods = silk
+life_rating = 32
+colonial = 2
+terrain = urban
+1861.1.1 = { railroad = 3 }
