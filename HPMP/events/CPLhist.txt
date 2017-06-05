@@ -14,8 +14,20 @@ country_event = {
 	trigger = {
 		NOT = { has_global_flag = january_uprising_happened }
 		tag = RUS
-		year = 1850
-		any_owned_province = { is_core = CPL }
+		year = 1860
+		OR = {
+			is_our_vassal = CPL
+			is_our_vassal = POL
+			AND = {
+				any_owned_province = { is_core = CPL }
+				NOT = {
+					exists = CPL
+				}
+				NOT = {
+					exists = POL
+				}
+			}
+		}
 		OR = {
 			has_recently_lost_war = yes	
 			AND = {
@@ -24,6 +36,10 @@ country_event = {
 				}
 			}
 		}
+	
+	mean_time_to_happen = { 
+		months = 40
+	}
 	
 	option = {
 		name = "EVTOPT500001A"
