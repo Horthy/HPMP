@@ -17,6 +17,7 @@ country_event = {
 		year = 1860
 		OR = {
 			is_our_vassal = CPL
+			is_our_vassal = POL
 			AND = {
 				any_owned_province = { is_core = CPL }
 				NOT = {
