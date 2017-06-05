@@ -15,7 +15,18 @@ country_event = {
 		NOT = { has_global_flag = january_uprising_happened }
 		tag = RUS
 		year = 1850
-		any_owned_province = { is_core = CPL }
+		OR = {
+			is_our_vassal = CPL
+			AND = {
+				any_owned_province = { is_core = CPL }
+				NOT = {
+					exists = CPL
+				}
+				NOT = {
+					exists = POL
+				}
+			}
+		}
 		OR = {
 			has_recently_lost_war = yes	
 			AND = {
