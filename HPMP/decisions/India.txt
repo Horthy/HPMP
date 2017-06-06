@@ -757,13 +757,10 @@ political_decisions = {
 		
 		
 		effect = {
-			any_owned = {
-				limit = { NOT = { has_province_modifier = trade_center }
-				province_id = 3286
-				}
-			add_province_modifier = {
-				name = trade_center
-				duration = 3650
+			3286 = {
+				add_province_modifier = {
+					name = trade_center
+					duration = 3650
 				}
 			}
 		}
