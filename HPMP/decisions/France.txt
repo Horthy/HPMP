@@ -335,7 +335,7 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			idealism = 1
+			ideological_thought = 1
 		}
 		
 		effect = {
