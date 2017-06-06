@@ -335,7 +335,7 @@ political_decisions = {
 		
 		allow = {
 			war = no
-			medicine = 1
+			idealism = 1
 		}
 		
 		effect = {
@@ -802,4 +802,3 @@ devil_island = {
 }
 
 }
-
