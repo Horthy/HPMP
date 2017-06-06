@@ -3,7 +3,8 @@ controller = PRU
 add_core = PRU
 add_core = GER
 trade_goods = fish
-life_rating = 40naval_base = 1
+life_rating = 40
+naval_base = 1
 1861.1.1 = {
 	state_building = {
 		level = 1
