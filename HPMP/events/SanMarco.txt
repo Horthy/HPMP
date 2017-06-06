@@ -6,8 +6,6 @@ country_event = {
 	picture = "fivedays"
 	
 	fire_only_once = yes
-  
-  major = yes
 
 	trigger = {
 		has_global_flag = hungarian_revolution_occurred
@@ -78,7 +76,7 @@ country_event = {
 		LOM = {
 			capital = 726
 			government = democracy
-      political_reform = mandatory_service 
+			political_reform = mandatory_service 
 			political_reform = non_secret_ballots
 			political_reform = universal_weighted_voting
 			political_reform = population_equal_weight
@@ -92,7 +90,7 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
-      leadership = 40
+			leadership = 40
 		}
 		ai_chance = {
 			factor = 95
@@ -165,7 +163,7 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
-      leadership = 40
+			leadership = 40
 		}
 		ai_chance = {
 			factor = 5
@@ -244,7 +242,7 @@ country_event = {
 		LOM = {
 			capital = 726
 			government = democracy
-      political_reform = mandatory_service 
+			political_reform = mandatory_service 
 			political_reform = non_secret_ballots
 			political_reform = universal_weighted_voting
 			political_reform = population_equal_weight
@@ -258,7 +256,7 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
-      leadership = 40
+			leadership = 40
 		}
 		change_tag_no_core_switch = LOM
 		ai_chance = {
@@ -273,19 +271,19 @@ country_event = {
   title = "EVTNAME66101"
   desc = "EVTDESC66101"
   picture = "sanmarco" # no picture!
-	
-	major = yes
 
   trigger = {
     has_global_flag = five_days_of_milan
     AUS = {
-      owns = 729
+			owns = 729
     }
   }
   
   mean_time_to_happen = { 
     days = 7
   }
+	
+	fire_only_once = yes
   
   immediate = {
 		set_global_flag = republic_san_marco
@@ -305,15 +303,15 @@ country_event = {
 			militancy = -6
 		}
     any_pop = {
-      limit = { 
-        OR = {
-          has_pop_culture = north_italian
-          has_pop_culture = south_italian
-        }
-      }
-      militancy = 7
-      consciousness = 5
-    }
+			limit = { 
+				OR = {
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
+					}
+			}
+			militancy = 7
+			consciousness = 5
+		}
 		random_owned = {
 			limit = {
 				owner = {
@@ -356,7 +354,7 @@ country_event = {
 		VEN = {
 			capital = 729
 			government = democracy
-      political_reform = mandatory_service 
+			political_reform = mandatory_service 
 			political_reform = non_secret_ballots
 			political_reform = universal_weighted_voting
 			political_reform = population_equal_weight
@@ -370,7 +368,7 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
-      leadership = 40
+			leadership = 40
 		}
 		ai_chance = {
 			factor = 95
@@ -443,7 +441,7 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
-      leadership = 40
+			leadership = 40
 		}
 		ai_chance = {
 			factor = 5
@@ -522,7 +520,7 @@ country_event = {
 		VEN = {
 			capital = 729
 			government = democracy
-      political_reform = mandatory_service 
+			political_reform = mandatory_service 
 			political_reform = non_secret_ballots
 			political_reform = universal_weighted_voting
 			political_reform = population_equal_weight
@@ -536,7 +534,7 @@ country_event = {
 			clr_country_flag = presidential_dictatorship_gov
 			clr_country_flag = fascist_gov
 			clr_country_flag = anarcho_liberal_gov
-      leadership = 40
+			leadership = 40
 		}
 		change_tag_no_core_switch = VEN
 		ai_chance = {
