@@ -49,3 +49,84 @@ country_event = {
 		any_pop = { scaled_consciousness = { factor = .5 } }
 	}
 }
+
+country_event = {
+
+	id = 190004
+	title = "EVTNAME190004"
+	desc = "EVTDESC190004"
+	picture = "war_peace"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RUS
+		year = 1867
+	}
+
+	mean_time_to_happen = {
+		months = 26
+	}
+
+	option = {
+		name = "EVT190004OPTA"
+		prestige = 2
+		add_country_modifier = { name = reading duration = 720 }
+		any_pop = { limit = { literacy = 0.3  }
+			consciousness = 1
+		}
+	}
+}
+
+country_event = {
+
+	id = 190005
+	title = "EVTNAME190005"
+	desc = "EVTDESC190005"
+	picture = "80_days"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		year = 1871
+	}
+
+	mean_time_to_happen = {
+		months = 25
+	}
+
+	option = {
+		name = "EVT190005OPTA"
+		prestige = 6
+		add_country_modifier = { name = reading duration = 365 }
+	}
+}
+
+country_event = {
+
+	id = 190006
+	title = "EVTNAME190006"
+	desc = "EVTDESC190006"
+	picture = "gaucho"
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ARG
+		year = 1877
+	}
+
+	mean_time_to_happen = {
+		months = 28
+	}
+
+	option = {
+		name = "EVT190006OPTA"
+		prestige = 3
+		add_country_modifier = { name = reading duration = 365 }
+		any_pop = { limit = { literacy = 0.4  }
+			consciousness = 1
+		}
+	}
+}
