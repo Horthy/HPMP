@@ -434,7 +434,7 @@ country_event = {
 		ai_chance = { 
       factor = 85
       modifier = {
-        factor = 50
+        factor = 0.1
         OR = {
           tag = SIC
           tag = PAP
@@ -455,13 +455,6 @@ country_event = {
 		
 		ai_chance = { 
       factor = 15
-      modifier = {
-        factor = 50
-        OR = {
-          tag = SIC
-          tag = PAP
-        }
-      }
     }
 	}
 }
