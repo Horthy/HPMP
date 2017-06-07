@@ -26,14 +26,29 @@ country_event = {
 	option = {
 		name = "EVT66100OPTA"
 		726 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = north_italian
+				}
+				militancy = 3
+				consciousness = 1
+			}
 			change_controller = REB
 			add_province_modifier = {
 				name = nationalist_agitation
 				duration = 1095
 			}
 		}
+		THIS = {
+			any_pop = {
+				limit = {
+					has_pop_culture = north_italian
+				}
+				militancy = 2
+				consciousness = 2
+			}
+		}
 	}
-
 }
 
 # Republic of San Marco 66101
@@ -337,7 +352,53 @@ country_event = {
 	}
 }
 
-### war
+### war 66107
+country_event = {
+  id = 66107
+  title = "EVTNAME66107" 
+	desc = "EVTDESC66107"
+  picture = "sanmarco"
+  
+  trigger = {
+		has_country_flag = war_italian_independence
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+  
+  option = {
+		name = "EVTOPT66107A"
+		
+		relation = {
+			who = VEN
+			value = 200
+		}
+		leave_alliance = FRA
+		war = { 
+      target = AUS
+      attacker_goal = {
+        casus_belli = unification_casus_belli
+        state_province_id = 726
+      }
+      defender_goal = {
+				casus_belli = humiliate
+      }
+			defender_goal = {
+        casus_belli = status_quo
+      }
+      call_ally = yes
+    }
+		727 = {
+			change_controller = SAR
+		}
+		728 = {
+			change_controller = SAR
+		}
+	}
+}
 
 # Minors join Sardinia 66102
 country_event = {
@@ -351,14 +412,17 @@ country_event = {
   option = {
 		name = "EVTOPT66102A"
 		set_country_flag = joined_sar
-		neutrality = yes
+		prestige = 1
 		relation = {
 			who = FROM
 			value = 200
 		}
+		leave_alliance = AUS
 		create_alliance = FROM
-		any_pop = {
-			militancy = -2
+		THIS = {
+			any_pop = {
+				militancy = -2
+			}
 		}
 		AUS = {
 			diplomatic_influence = {
@@ -381,11 +445,12 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT66102B"
-		
-		set_country_flag = refused_sar
     
-    any_pop = {
-			militancy = 1
+		THIS = {
+	    any_pop = {
+				militancy = 1
+				consciousness = 3
+			}
 		}
 		
 		ai_chance = { 
@@ -403,26 +468,39 @@ country_event = {
 
 ### aftermath
 
-# Sardinia lost 66103
+# Minors return to Austrian SoI if Sardinia lost 66105
 country_event = {
-	id = 66103
-	title = "EVTNAME66103"
-	desc = "EVTDESC66103"
+	id = 66105
+	title = "EVTNAME66105"
+	desc = "EVTDESC66105"
 	picture = "sanmarco"
 	
 	trigger = {
-		has_country_flag = declared_war_italian_independence
 		SAR = { war = no }
+		SAR = { truce_with = AUS }
 		AUS = { owns = 726 }
+		has_country_flag = joined_sar
+		NOT = {
+			tag = PAP
+			tag = SIC
+		}
+		NOT = {
+			has_country_flag = minor_returned
+		}
 	}
 	
 	mean_time_to_happen = { days = 1 }
 	
-	fire_only_once = yes
-	
 	option = {
-		name = "EVTOPT61103A"
-		set_country_flag = sardinia_lost	
+		name = "EVTOPT61105A"
+		set_country_flag = minor_returned
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = 500
+			}
+			create_alliance = THIS
+		}
 	}
 }
 
@@ -434,45 +512,23 @@ country_event = {
 	picture = "sanmarco"
 	
 	trigger = {
-		has_country_flag = declared_war_italian_independence
+		has_country_flag = war_italian_independence
 		SAR = { war = no }
-		726 = { NOT = { owner = AUS } }
+		truce_with = AUS
+		owns = 726
 	}
 	
-	option = {
-		name = "EVTOPT66104A"	
-		set_country_flag = sardinia_won
-	}
-}
-
-# Minors return to Austrian SoI 66105
-country_event = {
-	id = 61105
-	title = "EVTNAME66105"
-	desc = "EVTDESC66105"
-	picture = "sanmarco"
-	
-	trigger = {
-		SAR = {
-			has_country_flag = sardinia_lost
-		}
-		has_country_flag = joined_sar
-		NOT = {
-			tag = PAP
-			tag = SIC
-		}
-	}
+	fire_only_once = yes
 	
 	mean_time_to_happen = { days = 1 }
 	
+	fire_only_once = yes
+	
 	option = {
-		name = "EVTOPT61105A"
-		AUS = {
-			diplomatic_influence = {
-				who = THIS
-				value = 500
-			}
-			create_alliance = THIS
+		name = "EVTOPT66104A"	
+		prestige = 20
+		any_pop = {
+			militancy = -2
 		}
 	}
 }
