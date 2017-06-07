@@ -68,6 +68,7 @@ mechanical_production = 1
 consciousness = 2
 nonstate_consciousness = 0
 
+decision = setup_GRE
 oob = "GRE_oob.txt"
 1861.1.1 = {
 	oob = "/1861/GRE_oob.txt"
