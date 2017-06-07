@@ -1,0 +1,527 @@
+### Prelude
+
+# Five Days Of Milan 66100
+country_event = {
+	id = 66100
+	title = "EVTNAME66100" 
+	desc = "EVTDESC66100"
+	picture = "fivedays"
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = hungarian_revolution_occurred
+		tag = AUS
+		owns = 726
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	immediate = {
+		set_global_flag = five_days_of_milan
+	}
+
+	option = {
+		name = "EVT66100OPTA"
+		726 = {
+			any_pop = {
+				limit = {
+					has_pop_culture = north_italian
+				}
+				militancy = 3
+				consciousness = 1
+			}
+			change_controller = REB
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		THIS = {
+			any_pop = {
+				limit = {
+					has_pop_culture = north_italian
+				}
+				militancy = 2
+				consciousness = 2
+			}
+		}
+	}
+}
+
+# Republic of San Marco 66101
+country_event = {
+  id = 66101
+  title = "EVTNAME66101"
+  desc = "EVTDESC66101"
+  picture = "sanmarco"
+
+  trigger = {
+    has_global_flag = five_days_of_milan
+    tag = AUS
+		AUS = {
+			owns = 729
+    }
+  }
+	
+	fire_only_once = yes
+  
+  mean_time_to_happen = { 
+    days = 7
+  }
+  
+  immediate = {
+		set_global_flag = republic_san_marco
+	}
+  
+  option = {
+		name = "EVT66101OPTA"
+		any_owned = {
+			limit = {
+				is_core = VEN
+			}
+			secede_province = VEN
+		}
+		relation = { who = VEN value = -100 }
+		any_owned = {
+			limit = { is_core = AUS }
+			remove_province_modifier = liberal_agitation
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -6
+		}
+    any_pop = {
+			limit = { 
+				OR = {
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
+					}
+			}
+			militancy = 4
+			consciousness = 6
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						national_provinces_occupied = .25
+						any_greater_power = { war_with = THIS }
+					}
+				}
+			}
+			owner = {
+				prestige = -10
+				war = {
+					target = VEN
+					attacker_goal = {
+						casus_belli = annex_core_country
+					}
+					call_ally = yes
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						national_provinces_occupied = .25
+						any_greater_power = { war_with = THIS }
+					}
+				}
+			}
+			owner = {
+				prestige = 20
+				war = {
+					target = VEN
+					attacker_goal = {
+						casus_belli = annex_core_country
+					}
+				}
+			}
+		}
+		
+		VEN = {
+			capital = 729
+			government = democracy
+			political_reform = mandatory_service 
+			political_reform = non_secret_ballots
+			political_reform = universal_weighted_voting
+			political_reform = population_equal_weight
+			political_reform = free_press
+			political_reform = yes_meeting
+			clr_country_flag = communist_gov
+			clr_country_flag = absolute_monarchy_gov
+			clr_country_flag = semi_constitutional_monarchy_gov
+			clr_country_flag = constitutional_monarchy_gov
+			set_country_flag = democracy_gov
+			clr_country_flag = presidential_dictatorship_gov
+			clr_country_flag = fascist_gov
+			clr_country_flag = anarcho_liberal_gov
+			define_general = {
+        name = "Daniele Manin"
+        background = nationalist
+        personality = inspiring
+      }
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+  
+	option = {
+		name = "EVT66101OPTB"
+		set_country_flag = austria_let_venice_go
+		any_owned = {
+			limit = {
+				is_core = VEN
+			}
+			secede_province = VEN
+		}
+		relation = { who = VEN value = -100 }
+		prestige = -25
+		casus_belli = {
+			target = VEN
+			type = cut_down_to_size
+			months = 60
+		}
+		any_pop = {
+			limit = {
+				has_pop_culture = romanian
+				location = { is_core = ROM }
+			}
+			militancy = 8
+		}
+		any_pop = {
+			limit = {
+				has_pop_culture = polish
+				location = { is_core = POL }
+			}
+			militancy = 8
+		}
+		any_pop = {
+			limit = {
+				has_pop_culture = north_italian
+				location = { is_core = ITA }
+			}
+			militancy = 8
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					is_core = POL
+					is_core = ROM
+					is_core = ITA
+				}
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 1095
+			}
+		}
+		VEN = {
+			capital = 729
+			government = democracy
+			political_reform = non_secret_ballots
+			political_reform = universal_weighted_voting
+			political_reform = population_equal_weight
+			political_reform = free_press
+			political_reform = yes_meeting
+			clr_country_flag = communist_gov
+			clr_country_flag = absolute_monarchy_gov
+			clr_country_flag = semi_constitutional_monarchy_gov
+			clr_country_flag = constitutional_monarchy_gov
+			set_country_flag = democracy_gov
+			clr_country_flag = presidential_dictatorship_gov
+			clr_country_flag = fascist_gov
+			clr_country_flag = anarcho_liberal_gov
+		}
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				any_greater_power = { war_with = THIS }
+			}
+			modifier = {
+				factor = 2
+				national_provinces_occupied = 0.25
+			}
+			modifier = {
+				factor = 0
+				war = no
+				NOT = { revolt_percentage = 0.25 }
+			}
+		}
+	}
+
+	option = {
+		name = "EVT66101OPTC"
+		any_owned = {
+			limit = {
+				is_core = VEN
+			}
+			secede_province = VEN
+		}
+		relation = { who = VEN value = -100 }
+		any_owned = {
+			limit = { is_core = AUS }
+			remove_province_modifier = liberal_agitation
+		}
+		any_pop = {
+			limit = { is_primary_culture = yes }
+			militancy = -6
+		}
+		any_pop = {
+			limit = { 
+				OR = {
+					has_pop_culture = north_italian
+					has_pop_culture = south_italian
+					}
+			}
+			militancy = 4
+			consciousness = 6
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = {
+						national_provinces_occupied = .25
+						any_greater_power = { war_with = THIS }
+					}
+				}
+			}
+			owner = {
+				prestige = -10
+				war = {
+					target = VEN
+					attacker_goal = {
+						casus_belli = annex_core_country
+					}
+					call_ally = yes
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = {
+						national_provinces_occupied = .25
+						any_greater_power = { war_with = THIS }
+					}
+				}
+			}
+			owner = {
+				prestige = 20
+				war = {
+					target = VEN
+					attacker_goal = {
+						casus_belli = annex_core_country
+					}
+				}
+			}
+		}
+		VEN = {
+			capital = 729
+			government = democracy
+			political_reform = mandatory_service 
+			political_reform = non_secret_ballots
+			political_reform = universal_weighted_voting
+			political_reform = population_equal_weight
+			political_reform = free_press
+			political_reform = yes_meeting
+			clr_country_flag = communist_gov
+			clr_country_flag = absolute_monarchy_gov
+			clr_country_flag = semi_constitutional_monarchy_gov
+			clr_country_flag = constitutional_monarchy_gov
+			set_country_flag = democracy_gov
+			clr_country_flag = presidential_dictatorship_gov
+			clr_country_flag = fascist_gov
+			clr_country_flag = anarcho_liberal_gov
+			define_general = {
+        name = "Daniele Manin"
+        background = nationalist
+        personality = inspiring
+      }
+		}
+		change_tag_no_core_switch = VEN
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+### war 66107
+country_event = {
+  id = 66107
+  title = "EVTNAME66107" 
+	desc = "EVTDESC66107"
+  picture = "sanmarco"
+  
+  trigger = {
+		has_country_flag = war_italian_independence
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+  
+  option = {
+		name = "EVTOPT66107A"
+		
+		relation = {
+			who = VEN
+			value = 200
+		}
+		leave_alliance = FRA
+		war = { 
+      target = AUS
+      attacker_goal = {
+        casus_belli = unification_casus_belli
+        state_province_id = 726
+      }
+      defender_goal = {
+				casus_belli = humiliate
+      }
+			defender_goal = {
+        casus_belli = status_quo
+      }
+      call_ally = yes
+    }
+		727 = {
+			change_controller = SAR
+		}
+		728 = {
+			change_controller = SAR
+		}
+	}
+}
+
+# Minors join Sardinia 66102
+country_event = {
+  id = 66102
+  title = "EVTNAME66102" 
+	desc = "EVTDESC66102"
+  picture = "sanmarco"
+  
+  is_triggered_only = yes
+  
+  option = {
+		name = "EVTOPT66102A"
+		set_country_flag = joined_sar
+		prestige = 1
+		relation = {
+			who = FROM
+			value = 200
+		}
+		leave_alliance = AUS
+		create_alliance = FROM
+		THIS = {
+			any_pop = {
+				militancy = -2
+			}
+		}
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = -500
+			}
+		}
+		
+		ai_chance = { 
+      factor = 85
+      modifier = {
+        factor = 0.1
+        OR = {
+          tag = SIC
+          tag = PAP
+        }
+      }
+    }
+	}
+	
+	option = {
+		name = "EVTOPT66102B"
+    
+		THIS = {
+	    any_pop = {
+				militancy = 1
+				consciousness = 3
+			}
+		}
+		
+		ai_chance = { 
+      factor = 15
+    }
+	}
+}
+
+### aftermath
+
+# Minors return to Austrian SoI if Sardinia lost 66105
+country_event = {
+	id = 66105
+	title = "EVTNAME66105"
+	desc = "EVTDESC66105"
+	picture = "sanmarco"
+	
+	trigger = {
+		SAR = { war = no }
+		SAR = { truce_with = AUS }
+		AUS = { owns = 726 }
+		has_country_flag = joined_sar
+		NOT = {
+			tag = PAP
+			tag = SIC
+		}
+		NOT = {
+			has_country_flag = minor_returned
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVTOPT61105A"
+		set_country_flag = minor_returned
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = 500
+			}
+			create_alliance = THIS
+		}
+	}
+}
+
+# Sardinia won 66104
+country_event = {
+	id = 66104
+	title = "EVTNAME66104"
+	desc = "EVTDESC66104"
+	picture = "sanmarco"
+	
+	trigger = {
+		has_country_flag = war_italian_independence
+		SAR = { war = no }
+		truce_with = AUS
+		owns = 726
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPT66104A"	
+		prestige = 20
+		any_pop = {
+			militancy = -2
+		}
+	}
+}
