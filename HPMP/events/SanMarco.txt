@@ -348,7 +348,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT66102A"
-		set_global_flag = pap_joined
+		set_country_flag = pap_joined
 		
 		relation = {
 			who = FROM
@@ -365,7 +365,7 @@ country_event = {
 	option = {
 		name = "EVTOPT66102B"
 		
-		set_global_flag = pap_refused
+		set_country_flag = pap_refused
 		
 		ai_chance = { factor = 34 }
 	}
@@ -383,7 +383,7 @@ country_event = {
 	option = {
 		name = "EVTOPT66103A"
 		
-		set_global_flag = sic_joined
+		set_country_flag = sic_joined
 		
 		relation = {
 			who = FROM
@@ -399,7 +399,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT66103B"
-		set_global_flag = sic_refused
+		set_country_flag = sic_refused
 		ai_chance = { factor = 25 }
 	}
 }
@@ -416,7 +416,7 @@ country_event = {
 	option = {
 		name = "EVTOPT66014A"
 		
-		set_global_flag = tus_joined
+		set_country_flag = tus_joined
 		leave_alliance = AUS
 		AUS = {
 			diplomatic_influence = {
@@ -438,7 +438,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT66104B"
-		set_global_flag = tus_refused
+		set_country_flag = tus_refused
 		ai_chance = { factor = 15 }
 	}
 }
@@ -455,7 +455,7 @@ country_event = {
 	option = {
 		name = "EVTOPT66015A"
 		
-		set_global_flag = mod_joined
+		set_country_flag = mod_joined
 		leave_alliance = AUS
 		AUS = {
 			diplomatic_influence = {
@@ -477,7 +477,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT66105B"
-		set_global_flag = mod_refused
+		set_country_flag = mod_refused
 		ai_chance = { factor = 15 }
 	}
 }
@@ -494,7 +494,7 @@ country_event = {
 	option = {
 		name = "EVTOPT66016A"
 		
-		set_global_flag = par_joined
+		set_country_flag = par_joined
 		leave_alliance = AUS
 		AUS = {
 			diplomatic_influence = {
@@ -516,7 +516,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT66106B"
-		set_global_flag = par_refused
+		set_country_flag = par_refused
 		ai_chance = { factor = 15 }
 	}
 }
@@ -534,6 +534,7 @@ country_event = {
 		has_global_flag = declared_war_italian_independence
 		SAR = { war = no }
 		AUS = { owns = 726 }
+		tag = SAR
 	}
 	
 	mean_time_to_happen = { days = 1 }
@@ -542,9 +543,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPT61107A"
-		effect = {
-			set_global_flag = sardinia_lost	
-		}
+		set_global_flag = sardinia_lost	
 	}
 }
 
@@ -559,17 +558,14 @@ country_event = {
 		has_global_flag = declared_war_italian_independence
 		SAR = { war = no }
 		726 = { NOT = { owner = AUS } }
+		tag = SAR
 	}
 	
 	option = {
-		name = "EVTOPT61107A"	
-		effect = {
-			set_global_flag = sardinia_won	
-		}
+		name = "EVTOPT61108A"	
+		set_global_flag = sardinia_won
 	}
 }
-
-## if sardinia lost, go back to soi you little italian minors
 
 # Tuscany 61109
 country_event = {
@@ -580,21 +576,20 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = sardinia_lost
-		has_global_flag = tus_joined
+		has_country_flag = tus_joined
+		tag = TUS
 	}
 	
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
-		name = "EVTOPT61108A"
-		effect = {
-			AUS = {
-				diplomatic_influence = {
-					who = THIS
-					value = 500
-				}
-			create_alliance = THIS
+		name = "EVTOPT61109A"
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = 500
 			}
+			create_alliance = THIS
 		}
 	}
 }
@@ -607,21 +602,20 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = sardinia_lost
-		has_global_flag = mod_joined
+		has_country_flag = mod_joined
+		tag = MOD
 	}
 	
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
 		name = "EVTOPT61109A"
-		effect = {
-			AUS = {
-				diplomatic_influence = {
-					who = THIS
-					value = 500
-				}
-			create_alliance = THIS
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = 500
 			}
+			create_alliance = THIS
 		}
 	}
 }
@@ -634,21 +628,20 @@ country_event = {
 	
 	trigger = {
 		has_global_flag = sardinia_lost
-		has_global_flag = par_joined
+		has_country_flag = par_joined
+		tag = PAR
 	}
 	
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
 		name = "EVTOPT61109A"
-		effect = {
-			AUS = {
-				diplomatic_influence = {
-					who = THIS
-					value = 500
-				}
-			create_alliance = THIS
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = 500
 			}
+			create_alliance = THIS
 		}
 	}
 }
