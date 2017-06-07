@@ -742,7 +742,7 @@ political_decisions = {
 	}
 
 	serampore_trade = {
-		picture = doha_city
+		picture = serampore
 		potential = {
 			3286 = {
 				owned_by = THIS
