@@ -1,6 +1,6 @@
-### prelude
+### Prelude
 
-# Five Days Of Milan 61100
+# Five Days Of Milan 66100
 country_event = {
 	id = 66100
 	title = "EVTNAME66100" 
@@ -36,7 +36,7 @@ country_event = {
 
 }
 
-# Republic of San Marco 61101
+# Republic of San Marco 66101
 country_event = {
   id = 66101
   title = "EVTNAME66101"
@@ -337,19 +337,19 @@ country_event = {
 
 ### war
 
-# Papal States to join Sardinia 61102
+# Minors join Sardinia 66102
 country_event = {
-	id = 61102
-	title = "EVTNAME66102"
+  id = 66102
+  title = "EVTNAME66102" 
 	desc = "EVTDESC66102"
-	picture = "sanmarco"
-	
-	is_triggered_only = yes
-	
-	option = {
+  picture = "sanmarco"
+  
+  is_triggered_only = yes
+  
+  option = {
 		name = "EVTOPT66102A"
-		set_country_flag = pap_joined
-		
+		set_country_flag = joined_sar
+		neutrality = yes
 		relation = {
 			who = FROM
 			value = 200
@@ -358,183 +358,60 @@ country_event = {
 		any_pop = {
 			militancy = -2
 		}
+		AUS = {
+			diplomatic_influence = {
+				who = THIS
+				value = -500
+			}
+		}
 		
-		ai_chance = { factor = 66 }
+		ai_chance = { 
+      factor = 85
+      modifier = {
+        factor = 50
+        OR = {
+          tag = SIC
+          tag = PAP
+        }
+      }
+    }
 	}
 	
 	option = {
 		name = "EVTOPT66102B"
 		
-		set_country_flag = pap_refused
-		
-		ai_chance = { factor = 34 }
-	}
-	
-}
-# Two Sicilies to join Sardinia 61103
-country_event = {
-	id = 61103
-	title = "EVTNAME66103"
-	desc = "EVTDESC66103"
-	picture = "sanmarco"
-
-	is_triggered_only = yes
-
-	option = {
-		name = "EVTOPT66103A"
-		
-		set_country_flag = sic_joined
-		
-		relation = {
-			who = FROM
-			value = 200
-		}
-		create_alliance = FROM
-		any_pop = {
-			militancy = -2
+		set_country_flag = refused_sar
+    
+    any_pop = {
+			militancy = 1
 		}
 		
-		ai_chance = { factor = 75 }
-	}
-	
-	option = {
-		name = "EVTOPT66103B"
-		set_country_flag = sic_refused
-		ai_chance = { factor = 25 }
-	}
-}
-
-# Tuscany to join Sardinia 61104
-country_event = {
-	id = 61104
-	title = "EVTNAME66104"
-	desc = "EVTDESC66104"
-	picture = "sanmarco"
-
-	is_triggered_only = yes
-
-	option = {
-		name = "EVTOPT66014A"
-		
-		set_country_flag = tus_joined
-		leave_alliance = AUS
-		AUS = {
-			diplomatic_influence = {
-				who = THIS
-				value = -500
-			}
-		}
-		relation = {
-			who = FROM
-			value = 200
-		}
-		create_alliance = FROM
-		any_pop = {
-			militancy = -2
-		}
-		
-		ai_chance = { factor = 85 }
-	}
-	
-	option = {
-		name = "EVTOPT66104B"
-		set_country_flag = tus_refused
-		ai_chance = { factor = 15 }
-	}
-}
-
-# Modena to join Sardinia 61105
-country_event = {
-	id = 61105
-	title = "EVTNAME66105"
-	desc = "EVTDESC66105"
-	picture = "sanmarco"
-
-	is_triggered_only = yes
-
-	option = {
-		name = "EVTOPT66015A"
-		
-		set_country_flag = mod_joined
-		leave_alliance = AUS
-		AUS = {
-			diplomatic_influence = {
-				who = THIS
-				value = -500
-			}
-		}
-		relation = {
-			who = FROM
-			value = 200
-		}
-		create_alliance = FROM
-		any_pop = {
-			militancy = -2
-		}
-		
-		ai_chance = { factor = 85 }
-	}
-	
-	option = {
-		name = "EVTOPT66105B"
-		set_country_flag = mod_refused
-		ai_chance = { factor = 15 }
-	}
-}
-
-# Parma to join Sardinia 61106
-country_event = {
-	id = 61106
-	title = "EVTNAME66106"
-	desc = "EVTDESC66106"
-	picture = "sanmarco"
-
-	is_triggered_only = yes
-
-	option = {
-		name = "EVTOPT66016A"
-		
-		set_country_flag = par_joined
-		leave_alliance = AUS
-		AUS = {
-			diplomatic_influence = {
-				who = THIS
-				value = -500
-			}
-		}
-		relation = {
-			who = FROM
-			value = 200
-		}
-		create_alliance = FROM
-		any_pop = {
-			militancy = -2
-		}
-		
-		ai_chance = { factor = 85 }
-	}
-	
-	option = {
-		name = "EVTOPT66106B"
-		set_country_flag = par_refused
-		ai_chance = { factor = 15 }
+		ai_chance = { 
+      factor = 15
+      modifier = {
+        factor = 50
+        OR = {
+          tag = SIC
+          tag = PAP
+        }
+      }
+    }
 	}
 }
 
 ### aftermath
 
-#Sardinia lost 61107
+# Sardinia lost 66103
 country_event = {
-	id = 61107
-	title = "EVTNAME66107"
-	desc = "EVTDESC66107"
+	id = 66103
+	title = "EVTNAME66103"
+	desc = "EVTDESC66103"
 	picture = "sanmarco"
 	
 	trigger = {
-		has_global_flag = declared_war_italian_independence
+		has_country_flag = declared_war_italian_independence
 		SAR = { war = no }
 		AUS = { owns = 726 }
-		tag = SAR
 	}
 	
 	mean_time_to_happen = { days = 1 }
@@ -542,100 +419,52 @@ country_event = {
 	fire_only_once = yes
 	
 	option = {
-		name = "EVTOPT61107A"
-		set_global_flag = sardinia_lost	
+		name = "EVTOPT61103A"
+		set_country_flag = sardinia_lost	
 	}
 }
 
-#Sardinia won 61108
+# Sardinia won 66104
 country_event = {
-	id = 61108
-	title = "EVTNAME66108"
-	desc = "EVTDESC66108"
+	id = 66104
+	title = "EVTNAME66104"
+	desc = "EVTDESC66104"
 	picture = "sanmarco"
 	
 	trigger = {
-		has_global_flag = declared_war_italian_independence
+		has_country_flag = declared_war_italian_independence
 		SAR = { war = no }
 		726 = { NOT = { owner = AUS } }
-		tag = SAR
 	}
 	
 	option = {
-		name = "EVTOPT61108A"	
-		set_global_flag = sardinia_won
+		name = "EVTOPT66104A"	
+		set_country_flag = sardinia_won
 	}
 }
 
-# Tuscany 61109
+# Minors return to Austrian SoI 66105
 country_event = {
-	id = 61109
-	title = "EVTNAME66109"
-	desc = "EVTDESC66109"
+	id = 61105
+	title = "EVTNAME66105"
+	desc = "EVTDESC66105"
 	picture = "sanmarco"
 	
 	trigger = {
-		has_global_flag = sardinia_lost
-		has_country_flag = tus_joined
-		tag = TUS
-	}
-	
-	mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "EVTOPT61109A"
-		AUS = {
-			diplomatic_influence = {
-				who = THIS
-				value = 500
-			}
-			create_alliance = THIS
+		SAR = {
+			has_country_flag = sardinia_lost
+		}
+		has_country_flag = joined_sar
+		NOT = {
+			tag = PAP
+			tag = SIC
 		}
 	}
-}
-# Modena 61110
-country_event = {
-	id = 61110
-	title = "EVTNAME66110"
-	desc = "EVTDESC66110"
-	picture = "sanmarco"
-	
-	trigger = {
-		has_global_flag = sardinia_lost
-		has_country_flag = mod_joined
-		tag = MOD
-	}
 	
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
-		name = "EVTOPT61109A"
-		AUS = {
-			diplomatic_influence = {
-				who = THIS
-				value = 500
-			}
-			create_alliance = THIS
-		}
-	}
-}
-# Parma 61111
-country_event = {
-	id = 61111
-	title = "EVTNAME66109"
-	desc = "EVTDESC66109"
-	picture = "sanmarco"
-	
-	trigger = {
-		has_global_flag = sardinia_lost
-		has_country_flag = par_joined
-		tag = PAR
-	}
-	
-	mean_time_to_happen = { days = 1 }
-	
-	option = {
-		name = "EVTOPT61109A"
+		name = "EVTOPT61105A"
 		AUS = {
 			diplomatic_influence = {
 				who = THIS

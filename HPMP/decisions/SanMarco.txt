@@ -2,7 +2,7 @@ political_decisions = {
   italian_war_of_independence_1 = {
     potential = {
       has_global_flag = republic_san_marco
-      NOT = { has_global_flag = war_italian_independence }
+      NOT = { has_country_flag = war_italian_independence }
       tag = SAR
     }
     allow = {
@@ -17,32 +17,32 @@ political_decisions = {
       NOT = { truce_with = AUS }
     }
     effect = {
-      set_global_flag = war_italian_independence
+      set_country_flag = war_italian_independence
       relation = {
   			who = VEN
   			value = 200
   		}
       create_alliance = VEN
-      PAP = { country_event = 61102 }
-      SIC = { country_event = 61103 }
-      TUS = { country_event = 61104 }
-      MOD = { country_event = 61105 }
-      PAR = { country_event = 61106 }
+      PAP = { country_event = 66102 }
+      SIC = { country_event = 66102 }
+      TUS = { country_event = 66102 }
+      MOD = { country_event = 66102 }
+      PAR = { country_event = 66102 }
+      LUC = { country_event = 66102 }
     }
     ai_will_do = { factor = 1 }
   }
   
-  italian_war_of_independence_2 { 
+  italian_war_of_independence_2 = { 
     potential = {
-      has_global_flag = war_italian_independence
-      NOT = { has_global_flag = declared_war_italian_independence}
-      tag = SAR
+      has_country_flag = war_italian_independence
+      NOT = { has_country_flag = declared_war_italian_independence}
     }
     allow = {
       
     }
     effect = {
-      set_global_flag = declared_war_italian_independence
+      set_country_flag = declared_war_italian_independence
       war = {
         target = AUS
         attacker_goal = {
