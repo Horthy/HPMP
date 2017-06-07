@@ -1,0 +1,59 @@
+political_decisions = {
+  italian_war_of_independence_1 = {
+    potential = {
+      has_global_flag = republic_san_marco
+      NOT = { has_global_flag = war_italian_independence }
+      tag = SAR
+    }
+    allow = {
+      war = no
+      VEN = {
+        exists = yes
+      }
+      OR = {
+        is_greater_power = yes
+        is_secondary_power = yes
+      }
+      NOT = { truce_with = AUS }
+    }
+    effect = {
+      set_global_flag = war_italian_independence
+      relation = {
+  			who = VEN
+  			value = 200
+  		}
+      create_alliance = VEN
+      PAP = { country_event = 61102 }
+      SIC = { country_event = 61103 }
+      TUS = { country_event = 61104 }
+      MOD = { country_event = 61105 }
+      PAR = { country_event = 61106 }
+    }
+    ai_will_do = { factor = 1 }
+  }
+  
+  italian_war_of_independence_2 { 
+    potential = {
+      has_global_flag = war_italian_independence
+      NOT = { has_global_flag = declared_war_italian_independence}
+      tag = SAR
+    }
+    allow = {
+      
+    }
+    effect = {
+      set_global_flag = declared_war_italian_independence
+      war = {
+        target = AUS
+        attacker_goal = {
+          casus_belli = unification_casus_belli
+          state_province_id = 726
+        }
+        defender_goal = {
+          casus_belli = status_quo
+        }
+        call_ally = yes
+      }
+    }
+  }
+}
