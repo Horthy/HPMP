@@ -1300,4 +1300,23 @@ political_decisions = {
 			2172 = { any_pop = { limit = { culture = mexican } literacy = 0.05 } }
 		}
 	}
+	
+	setup_GRE = {
+		potential = {
+			tag = GRE
+			always = no
+		}
+		
+		allow = {
+			tag = GRE
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = baby_boom 
+				duration = -1
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
 }
