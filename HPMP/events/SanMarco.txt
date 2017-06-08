@@ -56,7 +56,7 @@ country_event = {
   id = 66101
   title = "EVTNAME66101"
   desc = "EVTDESC66101"
-  picture = "sanmarco"
+  picture = "sanmarco2"
 
   trigger = {
     has_global_flag = five_days_of_milan
@@ -352,7 +352,7 @@ country_event = {
 	}
 }
 
-### war 66107
+### war 66107 also removes Sar from SOI if any
 country_event = {
   id = 66107
   title = "EVTNAME66107" 
@@ -371,31 +371,85 @@ country_event = {
   
   option = {
 		name = "EVTOPT66107A"
-		
+		SAR = { leave_alliance = FRA }
 		relation = {
 			who = VEN
 			value = 200
 		}
 		leave_alliance = FRA
-		war = { 
-      target = AUS
-      attacker_goal = {
-        casus_belli = unification_casus_belli
-        state_province_id = 726
-      }
-      defender_goal = {
-				casus_belli = humiliate
-      }
-			defender_goal = {
-        casus_belli = status_quo
-      }
-      call_ally = yes
-    }
-		727 = {
-			change_controller = SAR
+		any_country = {
+			limit 
 		}
-		728 = {
-			change_controller = SAR
+		any_country = {
+			limit = {
+				is_sphere_leader_of = SAR
+			}
+			diplomatic_influence = {
+				who = SAR
+				value = -200
+			}
+			set_country_flag = has_sar_in_soi
+		}
+		AUS = {
+			country_event = {
+				id = 66103
+				days = 2
+			}
+		}
+	}
+}
+
+#tricky shit - in order to avoid Austria calling allies, it is Austria who declares war 66103
+country_event = {
+	id = 66103
+	title = "EVTNAME66103"
+	desc = "EVTDESC66103"
+	picture = "sanmarco"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPT66103A"
+		add_country_modifier = {
+			name = small_country_draft
+			duration = 365
+		}
+		war = { 
+			target = SAR
+			attacker_goal = {
+				casus_belli = humiliate
+			}
+			attacker_goal = {
+				casus_belli = status_quo
+			}
+			defender_goal = {
+				casus_belli = unification_casus_belli
+				state_province_id = 726
+			}
+			call_ally = no
+		}
+		any_country = {
+			limit = {
+				tag = AUS
+				NOT = {
+					controls = 726
+				}
+			}
+			set_country_flag = rebel_milan
+		}
+		any_country = {
+			limit = {
+				tag=  AUS
+				NOT = {
+					has_country_flag = rebel_milan
+				}
+			}
+			727 = {
+				change_controller = SAR
+			}
+			728 = {
+				change_controller = SAR
+			}
 		}
 	}
 }
@@ -434,14 +488,18 @@ country_event = {
 		ai_chance = { 
       factor = 85
       modifier = {
-        factor = 0.1
+        factor = 0.06
         OR = {
-          tag = SIC
-          tag = PAP
-        }
+					tag = PAP
+					tag = SYC
+				}
       }
+			modifier = {
+				factor = 0.03
+				tag = SIC
+			}
     }
-	}
+  }
 	
 	option = {
 		name = "EVTOPT66102B"
@@ -460,6 +518,30 @@ country_event = {
 }
 
 ### aftermath
+#re-add SAR to Soi 66106
+country_event = {
+	id = 66106
+	title = "EVTNAME66106"
+	desc = "EVTDESC66106"
+	picture = "sanmarco"
+	
+	trigger = {
+		has_country_flag = has_sar_in_soi
+		SAR = { 
+			truce_with = AUS 
+		}
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPT66106A"
+		diplomatic_influence = {
+			who = SAR
+			value = 200
+		}
+	}
+}
 
 # Minors return to Austrian SoI if Sardinia lost 66105
 country_event = {
@@ -485,7 +567,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
-		name = "EVTOPT61105A"
+		name = "EVTOPT66105A"
 		set_country_flag = minor_returned
 		AUS = {
 			diplomatic_influence = {
