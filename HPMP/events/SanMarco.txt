@@ -424,11 +424,28 @@ country_event = {
 			}
 			call_ally = no
 		}
-		727 = {
-			change_controller = SAR
+		any_country = {
+			limit = {
+				tag = AUS
+				NOT = {
+					controls = 726
+				}
+			}
+			set_country_flag = rebel_milan
 		}
-		728 = {
-			change_controller = SAR
+		any_country = {
+			limit = {
+				tag=  AUS
+				NOT = {
+					has_country_flag = rebel_milan
+				}
+			}
+			727 = {
+				change_controller = SAR
+			}
+			728 = {
+				change_controller = SAR
+			}
 		}
 	}
 }
@@ -467,7 +484,7 @@ country_event = {
 		ai_chance = { 
       factor = 85
       modifier = {
-        factor = 0.07
+        factor = 0.06
         OR = {
 					tag = PAP
 					tag = SYC
