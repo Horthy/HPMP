@@ -515,8 +515,6 @@ country_event = {
 	
 	mean_time_to_happen = { days = 1 }
 	
-	fire_only_once = yes
-	
 	option = {
 		name = "EVTOPT66104A"	
 		prestige = 20
