@@ -26,13 +26,24 @@ political_decisions = {
   			value = 200
   		}
       create_alliance = VEN
-      PAP = { country_event = 66102 }
-      SIC = { country_event = 66102 }
-      TUS = { country_event = 66102 }
-      MOD = { country_event = 66102 }
-      PAR = { country_event = 66102 }
-      LUC = { country_event = 66102 }
+      any_country = {
+        limit = {
+          OR = {
+            primary_culture = north_italian
+            primary_culture = south_italian
+          }
+        }
+        country_event = 66102
+      }
     }
-    ai_will_do = { factor = 1 }
+    ai_will_do = { 
+      factor = 1
+      modifier = {
+        factor = 0
+        THIS = {
+          war = yes
+        }
+      }
+    }
   }
 }
