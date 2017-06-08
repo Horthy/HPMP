@@ -424,13 +424,12 @@ country_event = {
 			}
 			call_ally = no
 		}
-## edited out until hungary is balanced
-#		727 = {
-#			change_controller = SAR
-#		}
-#		728 = {
-#			change_controller = SAR
-#		}
+		727 = {
+			change_controller = SAR
+		}
+		728 = {
+			change_controller = SAR
+		}
 	}
 }
 
