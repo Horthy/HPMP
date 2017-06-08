@@ -36,7 +36,7 @@ political_decisions = {
 		
 		allow = {
 			NOT = { has_country_flag = population_exchange_with_turkey }
-			is_greater_power = yes
+			is_secondary_power = yes
 			invention = national_fraternity
 			owns = 832
 			owns = 805
@@ -52,12 +52,13 @@ political_decisions = {
 			TUR_860 = {
 				add_core = GRE
 			}
-			TUR_863 = {
-				add_core = GRE
-			}
-			TUR_869 = {
-				add_core = GRE
-			}
+			861 = { add_core = GRE }
+			862 = { add_core = GRE }
+			863 = { add_core = GRE }
+			864 = { add_core = GRE }
+			865 = { add_core = GRE }
+			869 = { add_core = GRE }
+			870 = { add_core = GRE }
 			set_country_flag = greece_has_got_a_brand_new_bag
 		}
 	}
@@ -173,4 +174,30 @@ political_decisions = {
 			}
 		}
 	}	
+	
+	rename_dedeagatch = {
+		picture = alexandroupoli
+		potential = {
+			tag = GRE
+			owns = 830 #Dedeagatch
+			OR = { 
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			NOT = { has_global_flag = greek_dedeagatch }
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 3
+			830 = { change_province_name = "Alexandroupoli" }
+			set_global_flag = greek_dedeagatch
+		}
+			
+		ai_will_do = { factor = 1 }
+	}
 }
