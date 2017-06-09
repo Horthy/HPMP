@@ -1,1 +1,1 @@
-# This is the github I guess, collaborate to make Vic2 better!
+# This is the github for HPMP (Bombermod), collaborate to make Vic2 better!
