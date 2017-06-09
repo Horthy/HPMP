@@ -1,0 +1,63 @@
+political_decisions = {
+  italian_war_of_independence = {
+    picture = form_italy
+    potential = {
+      tag = SAR
+      exists = VEN
+      AUS = {
+        has_country_flag = republic_san_marco
+      }
+      NOT = {
+        has_country_flag = war_italian_independence
+      }
+    }
+    allow = {
+      NOT = { badboy = 0.8 }
+      war = no
+      VEN = {
+        exists = yes
+      }
+      OR = {
+        is_greater_power = yes
+        is_secondary_power = yes
+      }
+      NOT = { truce_with = AUS }
+    }
+    effect = {
+      set_country_flag = war_italian_independence
+      badboy = 5
+      relation = {
+  			who = VEN
+  			value = 200
+  		}
+      create_alliance = VEN
+      any_country = {
+        limit = {
+          OR = {
+            primary_culture = north_italian
+            primary_culture = south_italian
+          }
+        }
+        country_event = 66102
+      }
+      THIS = {
+        country_event = {
+          id = 66107
+          days = 21
+        }
+      }
+      AUS = {
+        remove_country_flag = republic_san_marco
+      }
+    }
+    ai_will_do = { 
+      factor = 1
+      modifier = {
+        factor = 0
+        THIS = {
+          war = yes
+        }
+      }
+    }
+  }
+}
