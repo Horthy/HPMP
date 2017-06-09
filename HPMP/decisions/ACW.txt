@@ -1708,4 +1708,34 @@ political_decisions = {
 		
 		ai_will_do = { factor = 1 }
 	}
+	
+	rename_british_columbia = {
+	picture = british_columbia
+		potential = {
+			OR = {
+				primary_culture = texan
+				primary_culture = yankee
+				primary_culture = dixie
+			}
+			AND = {
+				owns = 13
+				owns = 14
+				owns = 15
+			}
+			NOT = { has_global_flag = american_columbia }
+		}
+		
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			set_global_flag = american_columbia
+			13 = { change_province_name = "Graytown" }
+			14 = { change_province_name = "Fort Defiance" }
+			15 = { change_province_name = "Franklin" }
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
 }
