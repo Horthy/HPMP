@@ -782,6 +782,11 @@ small_baby_boom = {
 	icon = 19
 }
 
+greek_baby_boom = {
+	population_growth = 0.002
+	icon = 19
+}
+
 baby_boom = {
 	population_growth = 0.005
 	icon = 19
