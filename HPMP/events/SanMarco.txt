@@ -20,7 +20,9 @@ country_event = {
 	}
 
 	immediate = {
-		set_global_flag = five_days_of_milan
+		AUS = {
+			set_country_flag = five_days_of_milan
+		}
 	}
 
 	option = {
@@ -59,11 +61,8 @@ country_event = {
   picture = "sanmarco2"
 
   trigger = {
-    has_global_flag = five_days_of_milan
-    tag = AUS
-		AUS = {
-			owns = 729
-    }
+    has_country_flag = five_days_of_milan
+		owns = 729
   }
 	
 	fire_only_once = yes
@@ -73,11 +72,14 @@ country_event = {
   }
   
   immediate = {
-		set_global_flag = republic_san_marco
+		AUS = {
+			set_country_flag = republic_san_marco
+		}
 	}
   
   option = {
 		name = "EVT66101OPTA"
+		remove_country_flag = five_days_of_milan
 		any_owned = {
 			limit = {
 				is_core = VEN
@@ -173,7 +175,7 @@ country_event = {
   
 	option = {
 		name = "EVT66101OPTB"
-		set_country_flag = austria_let_venice_go
+		remove_country_flag = five_days_of_milan
 		any_owned = {
 			limit = {
 				is_core = VEN
@@ -258,6 +260,7 @@ country_event = {
 
 	option = {
 		name = "EVT66101OPTC"
+		remove_country_flag = five_days_of_milan
 		any_owned = {
 			limit = {
 				is_core = VEN
@@ -359,19 +362,11 @@ country_event = {
 	desc = "EVTDESC66107"
   picture = "sanmarco"
   
-  trigger = {
-		has_country_flag = war_italian_independence
-	}
-	
 	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		days = 20
-	}
+	is_triggered_only = yes
   
   option = {
 		name = "EVTOPT66107A"
-		SAR = { leave_alliance = FRA }
 		relation = {
 			who = VEN
 			value = 200
@@ -427,29 +422,6 @@ country_event = {
 				state_province_id = 726
 			}
 			call_ally = no
-		}
-		any_country = {
-			limit = {
-				tag = AUS
-				NOT = {
-					controls = 726
-				}
-			}
-			set_country_flag = rebel_milan
-		}
-		any_country = {
-			limit = {
-				tag=  AUS
-				NOT = {
-					has_country_flag = rebel_milan
-				}
-			}
-			727 = {
-				change_controller = SAR
-			}
-			728 = {
-				change_controller = SAR
-			}
 		}
 	}
 }
@@ -540,6 +512,7 @@ country_event = {
 			who = SAR
 			value = 200
 		}
+		remove_country_flag = has_sar_in_soi
 	}
 }
 
@@ -559,16 +532,16 @@ country_event = {
 			tag = PAP
 			tag = SIC
 		}
-		NOT = {
-			has_country_flag = minor_returned
-		}
 	}
 	
 	mean_time_to_happen = { days = 1 }
 	
 	option = {
 		name = "EVTOPT66105A"
-		set_country_flag = minor_returned
+		remove_country_flag = joined_sar
+		SAR = {
+			remove_country_flag = war_italian_independence
+		}
 		AUS = {
 			diplomatic_influence = {
 				who = THIS
@@ -600,6 +573,7 @@ country_event = {
 	option = {
 		name = "EVTOPT66104A"	
 		prestige = 20
+		remove_country_flag = war_italian_independence
 		any_pop = {
 			militancy = -2
 		}

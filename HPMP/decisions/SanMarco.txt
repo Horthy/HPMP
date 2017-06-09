@@ -1,10 +1,14 @@
 political_decisions = {
   italian_war_of_independence = {
     potential = {
-      has_global_flag = republic_san_marco
-      NOT = { has_country_flag = war_italian_independence }
       tag = SAR
       exists = VEN
+      AUS = {
+        has_country_flag = republic_san_marco
+      }
+      NOT = {
+        has_country_flag = war_italian_independence
+      }
     }
     allow = {
       NOT = { badboy = 0.8 }
@@ -34,6 +38,15 @@ political_decisions = {
           }
         }
         country_event = 66102
+      }
+      THIS = {
+        country_event = {
+          id = 66107
+          days = 21
+        }
+      }
+      AUS = {
+        remove_country_flag = republic_san_marco
       }
     }
     ai_will_do = { 
