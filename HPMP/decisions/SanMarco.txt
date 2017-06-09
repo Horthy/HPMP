@@ -1,5 +1,6 @@
 political_decisions = {
   italian_war_of_independence = {
+    picture = form_italy
     potential = {
       tag = SAR
       exists = VEN
