@@ -1312,8 +1312,9 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_owned = {
-				add_province_modifier = { name = greek_baby_boom duration = 4380 }
+			add_country_modifier = {
+				name = greek_baby_boom
+				duration = 4380
 			}
 		}
 		ai_will_do = { factor = 1 }
