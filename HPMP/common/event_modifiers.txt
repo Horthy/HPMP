@@ -783,7 +783,7 @@ small_baby_boom = {
 }
 
 greek_baby_boom = {
-	global_population_growth = 0.002
+	global_population_growth = 0.002 # pop_growth = province modifier, global_population_growth = nationwide modifier
 	icon = 17
 }
 
