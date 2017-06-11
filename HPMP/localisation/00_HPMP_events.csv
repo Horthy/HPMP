@@ -44,3 +44,6 @@ EVTOPT66106A;Understood.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTNAME66103;First Italian War of Independence;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTDESC66103;The Kingdom of Sardinia and its Italian allies have declared war upon us, with the intention to acquire Lombardia. This event is used to force AI Austria not to call her allies.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTOPT66103A;We shall rule over Lombardy and Venice for eternity.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+EVTNAME10295;Hungary Pacified;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+EVTDESC10295;Our Russian allies managed to pacify Hungary. It shall be Austrian once again.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+EVTOPT10295A;Let's hope Hungarians don't pose any trouble in the future.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
