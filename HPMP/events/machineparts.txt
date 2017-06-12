@@ -1,0 +1,23 @@
+country_event = {
+  id = 6688221
+  title = "Machine parts"
+  desc = "Let's give you machine parts fam"
+  
+  trigger = {
+    civilized = yes
+    NOT = {
+      year = 1837
+      has_country_flag = got_parts
+    }
+    
+  }
+  
+  mean_time_to_happen = {
+    weeks = 1
+  }
+  
+  option = {
+    machine_parts = 500
+    set_country_flag = got_parts
+  }
+}
