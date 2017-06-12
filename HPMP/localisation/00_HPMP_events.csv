@@ -47,3 +47,6 @@ EVTOPT66103A;We shall rule over Lombardy and Venice for eternity.;;;;;;;;;;;;;;;
 EVTNAME552200;Our claims on Memel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTDESC552200;It's only natural for a reborn Lithuanian state to place a claim on the province of Memel, where many of our brethen live.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTOPT552200A;It can only be right.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
++EVTNAME10295;Hungary Pacified;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
++EVTDESC10295;Our Russian allies managed to pacify Hungary. It shall be Austrian once again.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
++EVTOPT10295A;Let's hope Hungarians don't pose any trouble in the future.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
