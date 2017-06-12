@@ -44,3 +44,6 @@ EVTOPT66106A;Understood.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTNAME66103;First Italian War of Independence;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTDESC66103;The Kingdom of Sardinia and its Italian allies have declared war upon us, with the intention to acquire Lombardia. This event is used to force AI Austria not to call her allies.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
 EVTOPT66103A;We shall rule over Lombardy and Venice for eternity.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+EVTNAME552200;Our claims on Memel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+EVTDESC552200;It's only natural for a reborn Lithuanian state to place a claim on the province of Memel, where many of our brethen live.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;
+EVTOPT552200A;It can only be right.;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;x;;;;

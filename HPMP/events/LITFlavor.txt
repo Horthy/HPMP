@@ -1,0 +1,27 @@
+country_event = {
+  id = 552200
+  title = "EVTNAME552200"
+  desc = "EVTDESC552200"
+  
+  trigger = {
+    tag = LIT
+    NOT = {
+      698 = {
+        is_core = LIT
+      }
+    }
+  }
+  
+  mean_time_to_happen = {
+    days = 1
+  }
+  
+  fire_only_once = yes
+  
+  option = {
+    name = "EVTOPT552200"
+    698 = {
+      add_core = LIT
+    }
+  }
+}
