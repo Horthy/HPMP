@@ -51,3 +51,34 @@ country_event = {
 		}
 	}
 }
+
+#hockey
+country_event = {
+	id = 778802
+	title = "EVTNAME778802"
+	desc = "EVTDESC778802"
+	picture = nhl
+	
+	trigger = {
+		owns = 58
+		year = 1873
+	}
+	
+	mean_time_to_happen = {
+		years = 3
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPT778802A"
+		prestige = 5
+		any_pop = {
+      limit = {
+        has_pop_culture = anglo_canadian
+        strata = poor
+      }
+      consciousness = -1
+    }
+	}
+}
