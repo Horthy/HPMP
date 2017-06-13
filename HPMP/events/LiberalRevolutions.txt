@@ -3863,6 +3863,35 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = 10295
+	title = "EVTNAME10295"
+	desc = "EVTDESC10295"
+	picture = hungarian_revolution_1848
+	
+	
+	#can still fire in a pretty rare circumstance when hungary, recently cut down to size by russia is fighting a war with Austria, but the chance of it happening is so low that I doubt it needs to be addressed
+	trigger = {
+		has_global_flag = hungarian_revolution_occured
+		HUN = {
+			truce_with = RUS
+			war_with = AUS
+			is_disarmed = yes
+		}
+		tag = AUS
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPT10295A"
+		inherit = HUN
+	}
+}
 # Dutch Constitutional Reform
 country_event = {
 	id = 10228
