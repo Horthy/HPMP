@@ -1,0 +1,84 @@
+#ski jumping
+country_event = {
+  id = 778800
+  title = "EVTNAME778800"
+  desc = "EVTDESC778800"
+  picture = skijump
+  
+  trigger = {
+    owns = 313
+    year = 1871
+  }
+  
+  mean_time_to_happen = {
+    years = 3
+  }
+  
+  fire_only_once = yes
+  
+  option = {
+    name = "EVTOPT778800A"
+    prestige = 5
+    poor_strata = {
+			consciousness = -1
+		}
+  }
+}
+
+#football
+country_event = {
+	id = 778801
+	title = "EVTNAME778801"
+	desc = "EVTDESC778801"
+	picture = football2
+	
+	trigger = {
+		tag = ENG
+		year = 1861
+	}
+	
+	mean_time_to_happen = {
+		years = 3
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPT778801A"
+		prestige = 5
+		poor_strata = {
+			consciousness = -1
+		}
+	}
+}
+
+#hockey
+country_event = {
+	id = 778802
+	title = "EVTNAME778802"
+	desc = "EVTDESC778802"
+	picture = nhl
+	
+	trigger = {
+		owns = 58
+		year = 1873
+	}
+	
+	mean_time_to_happen = {
+		years = 3
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPT778802A"
+		prestige = 5
+		any_pop = {
+      limit = {
+        has_pop_culture = anglo_canadian
+        strata = poor
+      }
+      consciousness = -1
+    }
+	}
+}
