@@ -532,6 +532,7 @@ country_event = {
 		NOT = {
 			tag = PAP
 			tag = SIC
+			tag = ITA
 		}
 	}
 	
