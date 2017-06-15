@@ -434,14 +434,14 @@ country_event = {
 	picture = "richguy"
 	
 	trigger = {
-		#todo
+		year = 1865
 		tag = BRZ
 	}
 	
 	fire_only_once = yes
 	
 	mean_time_to_happen = {
-		years = 4
+		years = 7
 	}
 	
 	option = {
