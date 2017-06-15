@@ -210,7 +210,7 @@ country_event = {
 		}
 	}
 		
-option = {
+	option = {
 		name = "vargasopt2"
 		any_owned = {
 			limit = {
@@ -231,8 +231,8 @@ option = {
 				casus_belli = status_quo
 			}
 		}
-		}
 	}
+}
 
 ####################Pedro II Abdication
 
@@ -426,3 +426,35 @@ country_event = {
 	}
 }
 
+# Irineu Evangelista de Sousa, Viscount of Mauá
+country_event = {
+	id = 110076
+	title = "EVTNAME110076"
+	desc = "EVTDESC110076"
+	picture = "richguy"
+	
+	trigger = {
+		#todo
+		tag = BRZ
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		years = 4
+	}
+	
+	option = {
+		name = "EVTOPT110076A"
+		2450 = {
+			infrastructure = 1
+		}
+		2451 = {
+			infrastructure = 1
+		}
+		add_country_modifier = {
+			name = brazil_rich_guy
+			duration = 1825
+		}
+	}
+}
