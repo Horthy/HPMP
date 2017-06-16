@@ -423,6 +423,8 @@
 		culture = brazilian
 		religion = catholic
 		size = 7175
+		militancy = 8
+    rebel_type = liberal_rebels
 	}
 
 	clergymen = {
@@ -447,6 +449,8 @@
 		culture = afro_brazilian
 		religion = catholic
 		size = 1150
+		militancy = 8
+    rebel_type = liberal_rebels
 	}
 
 	slaves = {
@@ -483,6 +487,8 @@
 		culture = amazonian
 		religion = animist
 		size = 2700
+		militancy = 8
+    rebel_type = liberal_rebels
 	}
 }
 #Santarem (20000/5000 POPS)
