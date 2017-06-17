@@ -225,10 +225,41 @@ army = {
 		home = 2344
 	}
 
-regiment = {
+	regiment = {
 		name = "2.Regimiento Colorado"
 		type = infantry
 		home = 2344
 	}
 }
 
+army = {
+	name = "Cabanagem Revolt"
+	location = 2410
+	
+	regiment = {
+		name = "1st Regiment"
+		type = irregular
+		home = 2410
+	}
+	regiment = {
+		name = "2nd Regiment"
+		type = irregular
+		home = 2410
+	}
+	regiment = {
+		name = "3rd Regiment"
+		type = irregular
+		home = 2410
+	}
+	regiment = {
+		name = "4th Regiment"
+		type = irregular
+		home = 2410
+	}
+	regiment = {
+		name = "5th Regiment"
+		type = irregular
+		home = 2410
+	}
+	
+}

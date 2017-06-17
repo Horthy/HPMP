@@ -2200,3 +2200,10 @@ emergency_tax_measures2 = {
 	global_pop_militancy_modifier = 0.10
 	icon = 10
 }
+
+### Brazil ###
+brazil_rich_guy = {
+	industry_tech_research_bonus = 0.05
+	commerce_tech_research_bonus = 0.05
+	icon = 11
+}
